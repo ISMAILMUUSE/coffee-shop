@@ -6,14 +6,17 @@ function Menu() {
     <section>
       <h2>Our Menu</h2>
 
-      {coffeeData.map((coffee) => (
-        <MenuItem
-          key={coffee.id}
-          name={coffee.name}
-          price={coffee.price}
-          description={coffee.description}
-        />
-      ))}
+      <div className="menu-grid">
+        {coffeeData.map((coffee) => (
+          <MenuItem
+            key={coffee.id}
+            name={coffee.name}
+            price={coffee.price}
+            description={coffee.description}
+            image={coffee.image}
+          />
+        ))}
+      </div>
     </section>
   );
 }

@@ -1,27 +1,246 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+/* --- Base & variables --- */
+:root {
+  --coffee-dark: #2c1810;
+  --coffee-mid: #5c4033;
+  --coffee-warm: #8b6914;
+  --cream: #f5ebe0;
+  --cream-soft: #faf6f1;
+  --accent: #c17f59;
+  --accent-bright: #d4a574;
+  --shadow: rgba(44, 24, 16, 0.12);
+  --glow: rgba(139, 105, 20, 0.25);
 }
 
-header, footer {
-  background-color: #4b2e2e;
-  color: white;
-  padding: 1rem;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--cream-soft);
+  color: var(--coffee-dark);
+  line-height: 1.5;
+}
+
+/* --- Header --- */
+.site-header {
+  background: linear-gradient(135deg, var(--coffee-dark) 0%, var(--coffee-mid) 100%);
+  color: var(--cream);
+  padding: 2rem 1.5rem;
   text-align: center;
 }
 
-section {
-  padding: 2rem;
-}
-.menu-item {
-  background: white;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.header-inner {
+  max-width: 720px;
+  margin: 0 auto;
 }
 
-.menu-item h3 {
+.header-title {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.header-tagline {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.92;
+}
+
+/* --- Menu --- */
+section:has(.menu-grid) {
+  padding: 2.5rem 1.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+section:has(.menu-grid) h2 {
+  margin: 0 0 1.5rem;
+  font-size: 1.5rem;
+  color: var(--coffee-dark);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.menu-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--shadow);
+}
+
+.menu-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.menu-content {
+  padding: 1rem;
+}
+
+.menu-content h3 {
   margin: 0 0 0.5rem;
+  color: var(--coffee-dark);
+}
+
+.menu-content p {
+  margin: 0 0 1rem;
+  color: var(--coffee-mid);
+}
+
+.menu-content strong {
+  color: var(--accent);
+}
+
+/* --- Location (Eastleigh 6th Street) --- */
+.location-section {
+  position: relative;
+  padding: 3rem 1.5rem;
+  overflow: hidden;
+}
+
+.location-glow {
+  position: absolute;
+  inset: -30% -20% -30% -20%;
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 50%,
+    var(--glow) 0%,
+    transparent 70%
+  );
+  animation: location-pulse 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes location-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.location-content {
+  position: relative;
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.location-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.location-title {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--coffee-dark);
+  line-height: 1.2;
+}
+
+.location-city {
+  display: block;
+  font-size: 0.65em;
+  font-weight: 600;
+  color: var(--coffee-warm);
+  letter-spacing: 0.08em;
+}
+
+.location-tagline {
+  margin: 0 0 1.25rem;
+  font-size: 1rem;
+  color: var(--coffee-mid);
+  line-height: 1.55;
+}
+
+.location-address {
+  font-style: normal;
+  margin-bottom: 0.5rem;
+  color: var(--coffee-dark);
+}
+
+.location-address strong {
+  font-size: 1.05rem;
+}
+
+.location-meta {
+  margin-bottom: 1.25rem;
+}
+
+.location-hours {
+  font-size: 0.9rem;
+  color: var(--coffee-mid);
+}
+
+.location-cta {
+  display: inline-block;
+  padding: 0.65rem 1.25rem;
+  background: var(--coffee-dark);
+  color: var(--cream) !important;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.location-cta:hover {
+  background: var(--coffee-mid);
+  transform: translateY(-1px);
+}
+
+/* --- Footer --- */
+.site-footer {
+  background: var(--coffee-dark);
+  color: var(--cream);
+  padding: 1.75rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.footer-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-location {
+  margin-bottom: 0.75rem;
+}
+
+.footer-location strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+}
+
+.footer-map-link {
+  color: var(--accent-bright);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-map-link:hover {
+  text-decoration: underline;
+}
+
+.footer-copy {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.85;
 }

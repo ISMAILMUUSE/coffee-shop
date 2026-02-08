@@ -1,8 +1,10 @@
 function Header() {
   return (
-    <header>
-      <h1>☕ Coffee Shop</h1>
-      <p>Fresh coffee, every day</p>
+    <header className="site-header">
+      <div className="header-inner">
+        <h1 className="header-title">☕ Coffee Shop</h1>
+        <p className="header-tagline">Fresh coffee, every day — Eastleigh 6th Street, Nairobi</p>
+      </div>
     </header>
   );
 }
