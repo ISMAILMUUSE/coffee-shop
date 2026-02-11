@@ -108,7 +108,7 @@ function AboutPage() {
       </section>
 
       {/* 4) Meet the Team */}
-      {/* <section className="about-section about-team" aria-labelledby="meet-team">
+      <section className="about-section about-team" aria-labelledby="meet-team">
         <div className="container">
           <h2 id="meet-team" className="section-title section-title--center">
             Meet the Team
@@ -170,7 +170,7 @@ function AboutPage() {
             </article>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* 5) Call to Action */}
       <section className="about-cta" aria-labelledby="visit-us">
