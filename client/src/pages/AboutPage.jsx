@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import aboutHeroImage from "../assets/images/about3.webp";
 import aboutStoryImage from "../assets/images/about1.jpg";
 import aboutTeamImage from "../assets/images/about2.jpg";
-
+import photo from "../assets/images/photo.jpg";
+import photo2 from "../assets/images/photo2.jpg"
+import photo3 from "../assets/images/photo3.jpg"
 function AboutPage() {
   return (
     <main className="page about-page">
@@ -121,8 +123,8 @@ function AboutPage() {
             <article className="team-card">
               <div className="team-avatar">
                 <img
-                  src={aboutTeamImage}
-                  alt="Maria Santos"
+                  src={photo}
+                  alt="Bushro Abdi"
                   loading="lazy"
                   style={{ objectPosition: "50% 35%" }}
                 />
@@ -138,8 +140,8 @@ function AboutPage() {
             <article className="team-card">
               <div className="team-avatar">
                 <img
-                  src={aboutTeamImage}
-                  alt="James Chen"
+                  src={photo2}
+                  alt="Abuallahi Ahmed"
                   loading="lazy"
                   style={{ objectPosition: "50% 50%" }}
                 />
@@ -155,8 +157,8 @@ function AboutPage() {
             <article className="team-card">
               <div className="team-avatar">
                 <img
-                  src={aboutTeamImage}
-                  alt="Alex Rodriguez"
+                  src={photo3}
+                  alt="Guuhaad Farah"
                   loading="lazy"
                   style={{ objectPosition: "50% 65%" }}
                 />

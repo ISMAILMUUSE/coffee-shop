@@ -7,52 +7,28 @@ import affogatoHero from "../assets/images/frappe.webp";
 import cortadoHero from "../assets/images/cortado.png";
 
 const CATEGORIES = [
-  { id: "all", label: "All Drinks", icon: "☕" },
-  { id: "espresso", label: "Espresso Bar", icon: "⚡" },
-  { id: "milk", label: "Milk & Foam", icon: "🥛" },
-  { id: "iced", label: "Iced & Indulgent", icon: "🧊" },
-  { id: "signature", label: "Signature Classics", icon: "🔥" },
-  { id: "tea", label: "Tea", icon: "🍵" },
-  { id: "food", label: "Food", icon: "🍔" },
+  { id: "all", label: "All drinks", icon: "📋" },
+  { id: "coffee", label: "Coffee", icon: "☕" },
+  { id: "juice", label: "Juice", icon: "🧃" },
+   { id: "food", label: "food", icon: "🍵" },
+   
 ];
-
-function getCategoryForCoffee(name) {
-  const lower = name.toLowerCase();
-
-  if (
-    lower.includes("espresso") ||
-    lower === "ristretto" ||
-    lower === "lungo" ||
-    lower === "red eye" ||
-    lower === "black eye"
-  ) {
-    return "espresso";
-  }
-
-  if (
-    lower === "cappuccino" ||
-    lower === "latte" ||
-    lower === "flat white" ||
-    lower === "macchiato"
-  ) {
-    return "milk";
-  }
-
-  if (lower === "affogato" || lower === "vienna" || lower === "irish") {
-    return "iced";
-  }
-
-  return "signature";
-}
 
 function MenuPage() {
   const [activeCategory, setActiveCategory] = useState("all");
 
   const filteredCoffee = useMemo(() => {
     if (activeCategory === "all") return coffeeData;
-    return coffeeData.filter(
-      (coffee) => getCategoryForCoffee(coffee.name) === activeCategory
-    );
+
+    if (activeCategory === "juice") {
+      return coffeeData.filter((item) => item.category === "juice");
+    }
+
+    if (activeCategory === "coffee") {
+      return coffeeData.filter((item) => item.category !== "juice");
+    }
+
+    return coffeeData;
   }, [activeCategory]);
 
   return (
@@ -101,10 +77,10 @@ function MenuPage() {
       <section className="menu-section">
         <div className="container">
           <header className="menu-section-header">
-            <h2 className="section-title">Coffee, just the way you like it</h2>
+            <h2 className="section-title">Drinks, just the way you like them</h2>
             <p className="section-lede">
-              Explore our handcrafted coffee selection. Every bean is carefully
-              sourced and every cup is brewed to highlight the best of its
+              Explore our handcrafted drinks selection. From rich coffees to
+              refreshing juices, every sip is made to highlight the best of its
               character.
             </p>
           </header>
@@ -125,7 +101,7 @@ function MenuPage() {
           </h2>
           <p className="section-lede section-lede--center">
             Customize your drink to match your taste, mood, and moment. Our
-            baristas are happy to help you find your perfect balance.
+            baristas are happy to help you find your perfect balance and enjoy the food as well.
           </p>
 
           <div className="menu-customization-grid">

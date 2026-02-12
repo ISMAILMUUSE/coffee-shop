@@ -13,6 +13,17 @@ import redEye from "../assets/images/doppio.jpg";
 import blackEye from "../assets/images/coldbrew.jpg";
 import vienna from "../assets/images/frappe.webp";
 import irish from "../assets/images/coldbrew.jpg"; 
+import orange from "../assets/images/orange.jpg";
+import grapefruit from "../assets/images/grapefruit.jpg";
+import lemon from "../assets/images/lemon.jpg";
+import strawberry from "../assets/images/strawberry.jpg";
+import blackberry from "../assets/images/blackberry.jpg";
+import papaya from "../assets/images/papaya.png";
+import mango from "../assets/images/mango.png";
+import passion from "../assets/images/passion.jpg";
+import blueberry from "../assets/images/blueberry.jpg";
+import coconut from "../assets/images/coconut.png";
+import pineapple from "../assets/images/pineapple.jpg";
 const coffeeData = [
   {
     id: 1,
@@ -178,7 +189,133 @@ const coffeeData = [
             serving:"Small glass or ceramic mug (6-8 oz)",
             taste:"Sweet, richly flavored drink that is both sweet and satisfying.",
              image: irish
+        },
+        // juice photo 
+        {
+          id :16,
+          name:"Orange Juice",
+          price:2.99,
+          description:"Classic breakfast juice made from fresh oranges",
+          benefits:"Excellent source of vitamin C, folate, potassium; supports immune health",
+          flavorprofile:"Sweet, tangy, refreshing",
+          popularvarieties:"Fresh-squeezed, from concentrate",
+          healthnotes:"High in natural sugars",
+          category: "juice",
+          image: orange
+        },
+        {
+          id :17,
+          name:"Grapefruit Juice",
+          price : 4.99,
+          benefits:"Rich in vitamin C, antioxidants, aids in weight management",
+          flavorprofile:"Bitter-sweet, tangy, slightly acidic",
+          healthnotes:"Can interact with certain medications",
+          category: "juice",
+          image: grapefruit
+        
+        },
+        {
+          id :18,
+          name:"Lemon Juice",
+          price: 1.99,
+          description:" Pure lemon extract, often diluted for lemonade",
+          benefits:"High in vitamin C, supports digestion, alkalizing effect",
+          flavorprofile:"Extremely tart, acidic, refreshing",
+          uses:"Detox drinks, lemonade, flavor enhancer",
+          category: "juice",
+          image: lemon
+        
+        },
+        {
+          id :19,
+          name:"Strawberry Juice",
+          price :6.99,
+          description: "weet red berry juice",
+          benefits:"Vitamin C, manganese, antioxidants",
+          flavorprofile:"Sweet, aromatic, fresh",
+          uses:"Often blended with other fruits",
+          category: "juice",
+          image: strawberry
+        },
+        {
+          id :20,
+          name:"Blackberry/Raspberry Juice",
+          price :4.5,
+          description: "Dark berry juices",
+          benefits:"High fiber, vitamin C, antioxidants",
+          flavorprofile: "Sweet-tart, rich",
+          category: "juice",
+          image: blackberry
+        
+        },
+        {
+          id :21,
+          name:"Papaya Juice",
+          price :5,
+          description: "Smooth tropical juice",
+          benefits:"Digestive enzymes (papain), vitamin C, vitamin A",
+          flavorprofile: " Mild, sweet, slightly musky",
+          category: "juice",
+          image: papaya
+        
+        },
+        {
+          id :22,
+          name:"Mango Juice",
+          price :2,
+          description: "Rich, creamy tropical juice",
+          benefits:"Vitamin A, vitamin C, beta-carotene",
+          flavorprofile:"Sweet, creamy, tropical",
+          uses:"Smoothies, tropical blends",
+          category: "juice",
+          image: mango
+        },
+        {
+          id :23,
+          name:"Passion Fruit Juice",
+          price :3,
+          description: "Exotic, aromatic juice",
+          benefits:"Vitamin C, fiber, antioxidants",
+          flavorprofile:"Tart, sweet, intensely aromatic",
+          category: "juice",
+          image: passion
+        
+        },
+        {
+          
+          id :24,
+          name:"Blueberry Juice",
+          price : 4.99,
+          description:"Deep purple antioxidant-rich juice",
+          benefits:"Highest antioxidant content, supports brain health, memory",
+          flavorprofile:"Mildly sweet, slightly tart",
+          healthnotes:"Supports cognitive function",
+          category: "juice",
+          image: blueberry
+        },
+        {
+          id :25,
+          name:"Coconut Water",
+          price : 1.5,
+          description:"Clear liquid from young coconuts",
+          benefits:" Electrolytes, potassium, natural hydration",
+          flavorprofile:"Mildly sweet, nutty",
+          uses:"Post-workout hydration",
+          category: "juice",
+          image: coconut
+        },
+        {
+          id :26,
+          name:"Pineapple Juice",
+          price : 2.5,
+          description:"Sweet tropical juice",
+          benefits:"Vitamin C, manganese, bromelain enzyme (aids digestion)",
+          flavorprofile:"Sweet, tangy, tropical",
+          healthnotes:" Anti-inflammatory properties",
+          category: "juice",
+          image: pineapple
         }
+
 ];
 
 export default coffeeData;
